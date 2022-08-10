@@ -1,6 +1,6 @@
 <template>
   <div class="promos" @click="openDownloadLink">
-
+    <img src="../assets/image/body-bg.jpg"/>
   </div>
 </template>
 
@@ -16,10 +16,11 @@ export default {
 
 <style lang="scss" scoped>
 .promos{
-  background-image: url("../assets/body-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  overflow-y: auto;
+
+  img{
+    width: 100%;
+  }
 }
 </style>
