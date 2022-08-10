@@ -1,0 +1,1 @@
+export default ["rule2_01.jpg", "rule2_02.jpg", "rule2_03.jpg", "rule2_04.jpg", "rule2_05.jpg", "rule2_06.jpg", "rule2_07.jpg", "rule2_08.jpg", "rule2_09.jpg", "rule2_10.jpg"]

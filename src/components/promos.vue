@@ -1,26 +1,33 @@
 <template>
-  <div class="promos" @click="openDownloadLink">
-    <img src="../assets/image/body-bg.jpg"/>
+  <div class="promos">
+    <ios-download v-if="deviceType === 'iphone'"></ios-download>
+    <android-download v-else></android-download>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import androidDownload from "./promos-android.vue";
+import iosDownload from "./promos-ios.vue";
+//import { getDeviceType } from "../common/js/device.js";
+import {onMounted} from "vue";
+
 export default {
-  methods:{
-    openDownloadLink(){
-      
-    }
+  data() {
+    return {
+      deviceType: "",
+    };
+  },
+  components: { androidDownload, iosDownload },
+  mounted(){
+    console.log("========================");
+  },
+  setup(){
+    console.log("sssss5555555555");
+    onMounted(()=>{
+      console.log("sss");
+      //this.deviceType = getDeviceType();
+      //console.log(this.deviceType);
+    })
   }
-}
+};
 </script>
-
-<style lang="scss" scoped>
-.promos{
-  height: 100%;
-  overflow-y: auto;
-
-  img{
-    width: 100%;
-  }
-}
-</style>
