@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import promos from "./components/promos-android.vue";
+import promos from "./components/promos.vue";
 
 export default {
   name: 'App',

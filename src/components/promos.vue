@@ -5,11 +5,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import androidDownload from "./promos-android.vue";
 import iosDownload from "./promos-ios.vue";
-//import { getDeviceType } from "../common/js/device.js";
-import {onMounted} from "vue";
+import { getDeviceType } from "../assets/js/device.js";
 
 export default {
   data() {
@@ -18,16 +17,8 @@ export default {
     };
   },
   components: { androidDownload, iosDownload },
-  mounted(){
-    console.log("========================");
-  },
-  setup(){
-    console.log("sssss5555555555");
-    onMounted(()=>{
-      console.log("sss");
-      //this.deviceType = getDeviceType();
-      //console.log(this.deviceType);
-    })
+  created(){
+    this.deviceType = getDeviceType();
   }
 };
 </script>

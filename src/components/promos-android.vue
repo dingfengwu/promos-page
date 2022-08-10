@@ -1,14 +1,17 @@
 <template>
-  <div class="promos-android" @click="openDownloadLink">
-    <div class="main" v-if="showMain">
+  <div class="promos-android">
+    <div class="main" v-if="showMain" @click="openDownloadLink">
       <img src="../assets/image/body-bg.jpg" />
 
       <div class="nav">
         <img
           src="../assets/image/kill-viroid.png"
-          @click="setShowKillViroidNav"
+          @click.stop="setShowKillViroidNav"
         /><br />
-        <img src="../assets/image/customer-service.png" />
+        <img
+          src="../assets/image/customer-service.png"
+          @click.stop="openCustomerService"
+        />
       </div>
     </div>
 
@@ -42,6 +45,8 @@
 
 <script>
 import phoneList from "../assets/js/config/phone-list.js";
+import { openUrlInNewWindow } from "../assets/js/util";
+import { appConfig } from "../assets/js/config/static";
 
 export default {
   data() {
@@ -55,7 +60,10 @@ export default {
   },
   methods: {
     openDownloadLink() {
-      
+      openUrlInNewWindow("/static/app.apk");
+    },
+    openCustomerService() {
+      openUrlInNewWindow(appConfig.customerServiceUrl);
     },
     setShowKillViroidNav() {
       this.showKillViroidNav = true;
@@ -71,10 +79,10 @@ export default {
       this.showKillViroidContent = true;
       this.showKillViroidNav = false;
     },
-    closeShowKillViroidContent(){
-      this.showKillViroidContent=false;
-       this.showKillViroidNav = true;
-    }
+    closeShowKillViroidContent() {
+      this.showKillViroidContent = false;
+      this.showKillViroidNav = true;
+    },
   },
 };
 </script>
@@ -123,17 +131,17 @@ export default {
     .body {
       width: 100%;
       height: 700px;
-      background-image: url("../assets/image/main.jpg");
+      background-image: url("../assets/image/android-nav-bg.jpg");
       background-repeat: no-repeat;
       background-size: 100% auto;
 
       .inner {
         width: 260px;
         margin: 0 auto;
-        padding-top: 180px;
+        padding-top: 160px;
 
         .item {
-          margin-bottom: 15px;
+          margin-bottom: 14px;
 
           img {
             width: 100%;

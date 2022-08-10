@@ -1,4 +1,4 @@
-# promos-page
+# test
 
 ## Project setup
 ```
