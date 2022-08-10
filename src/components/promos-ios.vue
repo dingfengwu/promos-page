@@ -36,7 +36,7 @@
       <div class="body">
         <div class="close" @click="showDownloadDialog = false"></div>
         <div class="logo">
-          <img src="../assets/image/logo.png" />
+          <img src="/static/logo.png" />
         </div>
         <div class="download download1" @click="openDownloadLink"></div>
         <div class="download download2" @click="openDownloadLink"></div>
