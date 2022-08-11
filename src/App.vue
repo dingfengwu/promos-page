@@ -4,9 +4,13 @@
 
 <script>
 import promos from "./components/promos.vue";
+import {appConfig} from "./assets/js/config/static.js";
 
 export default {
   name: 'App',
+  mounted(){
+    document.title=appConfig.documentTitle;
+  },
   components: {
     promos
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="promos-android">
     <div class="main" v-if="showMain" @click="openDownloadLink">
-      <img src="../assets/image/body-bg.jpg" />
+      <img src="../assets/image/body-bg.png" />
 
       <div class="nav">
         <img

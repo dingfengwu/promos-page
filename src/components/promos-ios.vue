@@ -1,7 +1,7 @@
 <template>
   <div class="promos-ios">
     <div class="main" @click="showDownloadDialog = true">
-      <img src="../assets/image/body-bg.jpg" />
+      <img src="../assets/image/body-bg.png" />
 
       <div class="nav">
         <img
