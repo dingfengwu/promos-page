@@ -11,6 +11,10 @@
         <img
           src="../assets/image/customer-service.png"
           @click.stop="openCustomerService"
+        /><br/>
+        <img
+          src="../assets/image/time-chat.png"
+          @click.stop="openTimechatUrl"
         />
       </div>
     </div>
@@ -61,6 +65,9 @@ export default {
   methods: {
     openDownloadLink() {
       openUrlInNewWindow("/static/app.apk");
+    },
+    openTimechatUrl() {
+      openUrlInNewWindow(appConfig.timechatDownloadUrl);
     },
     openCustomerService() {
       openUrlInNewWindow(appConfig.customerServiceUrl);

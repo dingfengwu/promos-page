@@ -11,6 +11,10 @@
         <img
           src="../assets/image/customer-service.png"
           @click.stop="openCustomerService"
+        /><br/>
+         <img
+          src="../assets/image/time-chat.png"
+          @click.stop="openTimechatUrl"
         />
       </div>
     </div>
@@ -60,6 +64,9 @@ export default {
     };
   },
   methods: {
+    openTimechatUrl() {
+      openUrlInNewWindow(appConfig.timechatDownloadUrl);
+    },
     openDownloadLink() {
       openUrlInNewWindow(appConfig.iosAppDownloadUrl);
     },
