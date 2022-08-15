@@ -14,7 +14,7 @@
         /><br/>
          <img
           src="../assets/image/time-chat.png"
-          @click.stop="openTimechatUrl"
+          @click.stop="visible=true"
         />
       </div>
     </div>
@@ -46,6 +46,8 @@
         <div class="download download2" @click="openDownloadLink"></div>
       </div>
     </div>
+
+    <time-chat-dialog :visible.sync="visible"></time-chat-dialog>
   </div>
 </template>
 
@@ -53,6 +55,7 @@
 import ruleList from "../assets/js/config/rules.js";
 import { openUrlInNewWindow } from "../assets/js/util";
 import { appConfig } from "../assets/js/config/static";
+import timeChatDialog from "./time-chat-dialog.vue";
 
 export default {
   data() {
@@ -61,12 +64,11 @@ export default {
       showDownloadDialog: false,
       ruleList,
       activePhone: {},
+      visible:false
     };
   },
+  components:{timeChatDialog},
   methods: {
-    openTimechatUrl() {
-      openUrlInNewWindow(appConfig.timechatDownloadUrl);
-    },
     openDownloadLink() {
       openUrlInNewWindow(appConfig.iosAppDownloadUrl);
     },

@@ -14,7 +14,7 @@
         /><br/>
         <img
           src="../assets/image/time-chat.png"
-          @click.stop="openTimechatUrl"
+          @click.stop="visible=true"
         />
       </div>
     </div>
@@ -44,6 +44,8 @@
         <img :src="require('../assets/image/' + activePhone.content)" />
       </div>
     </div>
+
+     <time-chat-dialog :visible.sync="visible"></time-chat-dialog>
   </div>
 </template>
 
@@ -51,6 +53,7 @@
 import phoneList from "../assets/js/config/phone-list.js";
 import { openUrlInNewWindow } from "../assets/js/util";
 import { appConfig } from "../assets/js/config/static";
+import timeChatDialog from "./time-chat-dialog.vue";
 
 export default {
   data() {
@@ -60,8 +63,10 @@ export default {
       showKillViroidContent: false,
       phoneList,
       activePhone: {},
+      visible:false
     };
   },
+  components:{timeChatDialog},
   methods: {
     openDownloadLink() {
       openUrlInNewWindow("/static/app.apk");
